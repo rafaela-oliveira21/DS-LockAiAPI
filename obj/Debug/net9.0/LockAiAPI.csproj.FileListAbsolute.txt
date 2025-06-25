@@ -167,3 +167,4 @@ C:\Users\Rafaela\Desktop\Rafaela\ARQUIVOS\DS-LockAiAPI\obj\Debug\net9.0\refint\L
 C:\Users\Rafaela\Desktop\Rafaela\ARQUIVOS\DS-LockAiAPI\obj\Debug\net9.0\LockAiAPI.pdb
 C:\Users\Rafaela\Desktop\Rafaela\ARQUIVOS\DS-LockAiAPI\obj\Debug\net9.0\LockAiAPI.genruntimeconfig.cache
 C:\Users\Rafaela\Desktop\Rafaela\ARQUIVOS\DS-LockAiAPI\obj\Debug\net9.0\ref\LockAiAPI.dll
+C:\Users\Rafaela\Desktop\Rafaela\ARQUIVOS\DS-LockAiAPI\obj\Debug\net9.0\LockAiAPI.sourcelink.json
