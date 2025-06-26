@@ -30,7 +30,7 @@ namespace LockAiAPI.Data
                     DataValidade = "2025-06-29",
                     Valor = 120f,
                     Situacao = 'L',
-                    DataSituacao = "2025-06-28",
+                    DataSituacao = "2025-06-28", 
                     IdUsuarioSituacao = 1
                 },
                 new PropostaLocacao
