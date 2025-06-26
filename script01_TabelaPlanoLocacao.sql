@@ -1,16 +1,20 @@
 ﻿BEGIN TRANSACTION;
+
 CREATE TABLE [TB_PLANO_LOCACAO] (
-    [Id] int NOT NULL IDENTITY,
-    [Nome] nvarchar(max) NOT NULL,
-    [Descricao] nvarchar(max) NOT NULL,
-    [DuracaoDias] int NOT NULL,
-    [Valor] float NOT NULL,
-    [Ativo] nvarchar(max) NOT NULL,
-    [DataInclusao] nvarchar(max) NOT NULL,
-    [IdUsuarioInclusao] int NOT NULL,
-    [DataAtualizacao] nvarchar(max) NOT NULL,
-    [IdUsuarioAtualizacao] int NOT NULL,
+    [Id] INT NOT NULL IDENTITY,
+    [Nome] NVARCHAR(40) NOT NULL,
+    [IdUsuario] INT NOT NULL,
+    [IdObjeto] INT NOT NULL,
+    [IdPlanoLocacao] INT NOT NULL,
+    [DataInicio] DATETIME NOT NULL,
+    [DataFim] DATETIME NOT NULL,
+    [DataValidade] DATETIME NOT NULL,
+    [DataSituacao] DATETIME NOT NULL,
+    [Valor] INT NOT NULL,
+    [Situacao] NVARCHAR(10) NOT NULL,
+    [IdUsuarioSituacao] INT NOT NULL,
     CONSTRAINT [PK_TB_PLANO_LOCACAO] PRIMARY KEY ([Id])
+
 );
 
 IF EXISTS (SELECT * FROM [sys].[identity_columns] 

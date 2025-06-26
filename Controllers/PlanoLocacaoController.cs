@@ -63,13 +63,13 @@ namespace LockAiAPI.Controllers
         }
 
         [HttpPost("confirmarPagamento")]
-        public async Task<IActionResult> ConfirmarPagamento(int idPlanoLocacao, int idUsuario)
+        public async Task<IActionResult> ConfirmarPagamento(int idPlanoLocacao, [FromQuery] int idUsuario)
         {
             var planoLocacao = await _context.PlanoLocacao.FindAsync(idPlanoLocacao);
             if (planoLocacao == null) return NotFound();
 
-            planoLocacao.Situacao = 'P'; // Por exemplo: P = Pago
-            planoLocacao.DataSituacao = DateTime.UtcNow.ToString("yyyy-MM-dd");
+            planoLocacao.Situacao = "Pago";
+            planoLocacao.DataSituacao = DateTime.UtcNow; 
             planoLocacao.IdUsuarioSituacao = idUsuario;
 
             await _context.SaveChangesAsync();
@@ -82,8 +82,8 @@ namespace LockAiAPI.Controllers
             var planolocacao = await _context.PlanoLocacao.FindAsync(idPlanoLocacao);
             if (planolocacao == null) return NotFound();
 
-            planolocacao.Situacao = 'C'; // C = Cancelado
-            planolocacao.DataSituacao = DateTime.UtcNow.ToString("yyyy-MM-dd");
+            planolocacao.Situacao = "Cancelado";
+            planolocacao.DataSituacao = DateTime.UtcNow; 
 
             await _context.SaveChangesAsync();
             return Ok(planolocacao);
