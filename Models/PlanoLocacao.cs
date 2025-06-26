@@ -1,6 +1,6 @@
 namespace LockAiAPI.Models
 {
-    public class PropostaLocacao
+    public class PlanoLocacao
     {
         public int Id { get; set; }
         public string Data { get; set; }
