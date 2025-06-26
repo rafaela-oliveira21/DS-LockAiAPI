@@ -14,7 +14,7 @@ namespace LockAiAPI.Migrations
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
-#pragma warning disable 612, 618
+            #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "9.0.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
@@ -106,7 +106,7 @@ namespace LockAiAPI.Migrations
                             idTipoObjeto = 2
                         });
                 });
-#pragma warning restore 612, 618
+        #pragma warning restore 612, 618
         }
     }
 }
