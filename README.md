@@ -1,3 +1,27 @@
 Rafaela e Gabrielle
 
+# Projeto Final – Lock.Ai
+
+## Aluna: Rafaela Oliveira Nogueira
+
+## Repositório da API (.NET)
+- API com CRUD de PropostaLocacao
+- Link da API publicada no Somee: https://suaapi.somee.com/api/PropostaLocacao
+
+### Endpoints da API
+- GET /api/PropostaLocacao
+- GET /api/PropostaLocacao/{id}
+- POST /api/PropostaLocacao
+- PUT /api/PropostaLocacao/{id}
+- DELETE /api/PropostaLocacao/{id}
+- POST /api/PropostaLocacao/confirmarPagamento
+- POST /api/PropostaLocacao/cancelar
+
+---
+
+## Repositório do Front-End MVC
+- Projeto .NET MVC que consome a API
+- Link da aplicação publicada no Somee: https://seumvc.somee.com/Proposta/Index
+
+
 

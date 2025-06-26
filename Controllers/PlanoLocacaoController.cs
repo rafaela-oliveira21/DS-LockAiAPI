@@ -7,45 +7,45 @@ namespace LockAiAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class PropostaLocacaoController : ControllerBase
+    public class PlanoLocacaoController : ControllerBase
     {
         private readonly DataContext _context;
 
-        public PropostaLocacaoController(DataContext context)
+        public PlanoLocacaoController(DataContext context)
         {
             _context = context;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<PropostaLocacao>>> GetAll()
+        public async Task<ActionResult<IEnumerable<PlanoLocacao>>> GetAll()
         {
-            return await _context.PropostasLocacao.ToListAsync();
+            return await _context.PlanoLocacao.ToListAsync();
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<PropostaLocacao>> GetById(int id)
+        public async Task<ActionResult<PlanoLocacao>> GetById(int id)
         {
-            var proposta = await _context.PropostasLocacao.FindAsync(id);
-            if (proposta == null)
+            var plano = await _context.PlanoLocacao.FindAsync(id);
+            if (plano == null)
                 return NotFound();
-            return proposta;
+            return plano;
         }
 
         [HttpPost]
-        public async Task<ActionResult> Create(PropostaLocacao proposta)
+        public async Task<ActionResult> Create(PlanoLocacao planoLocacao)
         {
-            _context.PropostasLocacao.Add(proposta);
+            _context.PlanoLocacao.Add(planoLocacao);
             await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetById), new { id = proposta.Id }, proposta);
+            return CreatedAtAction(nameof(GetById), new { id = planoLocacao.Id }, planoLocacao);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, PropostaLocacao proposta)
+        public async Task<IActionResult> Update(int id, PlanoLocacao planoLocacao)
         {
-            if (id != proposta.Id)
+            if (id != planoLocacao.Id)
                 return BadRequest();
 
-            _context.Entry(proposta).State = EntityState.Modified;
+            _context.Entry(planoLocacao).State = EntityState.Modified;
             await _context.SaveChangesAsync();
             return NoContent();
         }
@@ -53,40 +53,40 @@ namespace LockAiAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var proposta = await _context.PropostasLocacao.FindAsync(id);
-            if (proposta == null)
+            var planolocacao = await _context.PlanoLocacao.FindAsync(id);
+            if (planolocacao == null)
                 return NotFound();
 
-            _context.PropostasLocacao.Remove(proposta);
+            _context.PlanoLocacao.Remove(planolocacao);
             await _context.SaveChangesAsync();
             return NoContent();
         }
 
         [HttpPost("confirmarPagamento")]
-        public async Task<IActionResult> ConfirmarPagamento(int idProposta, int idUsuario)
+        public async Task<IActionResult> ConfirmarPagamento(int idPlanoLocacao, int idUsuario)
         {
-            var proposta = await _context.PropostasLocacao.FindAsync(idProposta);
-            if (proposta == null) return NotFound();
+            var planoLocacao = await _context.PlanoLocacao.FindAsync(idPlanoLocacao);
+            if (planoLocacao == null) return NotFound();
 
-            proposta.Situacao = 'P'; // Por exemplo: P = Pago
-            proposta.DataSituacao = DateTime.UtcNow.ToString("yyyy-MM-dd");
-            proposta.IdUsuarioSituacao = idUsuario;
+            planoLocacao.Situacao = 'P'; // Por exemplo: P = Pago
+            planoLocacao.DataSituacao = DateTime.UtcNow.ToString("yyyy-MM-dd");
+            planoLocacao.IdUsuarioSituacao = idUsuario;
 
             await _context.SaveChangesAsync();
-            return Ok(proposta);
+            return Ok(planoLocacao);
         }
 
         [HttpPost("cancelar")]
-        public async Task<IActionResult> Cancelar(int idProposta)
+        public async Task<IActionResult> Cancelar(int idPlanoLocacao)
         {
-            var proposta = await _context.PropostasLocacao.FindAsync(idProposta);
-            if (proposta == null) return NotFound();
+            var planolocacao = await _context.PlanoLocacao.FindAsync(idPlanoLocacao);
+            if (planolocacao == null) return NotFound();
 
-            proposta.Situacao = 'C'; // C = Cancelado
-            proposta.DataSituacao = DateTime.UtcNow.ToString("yyyy-MM-dd");
+            planolocacao.Situacao = 'C'; // C = Cancelado
+            planolocacao.DataSituacao = DateTime.UtcNow.ToString("yyyy-MM-dd");
 
             await _context.SaveChangesAsync();
-            return Ok(proposta);
+            return Ok(planolocacao);
         }
     }
 }

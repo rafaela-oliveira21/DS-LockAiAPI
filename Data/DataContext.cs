@@ -8,6 +8,6 @@ namespace LockAiAPI.Data
         public DataContext(DbContextOptions<DataContext> options)
             : base(options) { }
 
-        public DbSet<PropostaLocacao> PropostasLocacao { get; set; }
+        public DbSet<PlanoLocacao> PlanoLocacao { get; set; }
     }
 }
