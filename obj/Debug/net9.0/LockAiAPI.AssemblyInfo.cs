@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LockAiAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0feeb78ae138d2b7149673775cdf61c6d2d5949c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f8b7eded232fe2bb1cf6d409d0d48b524430629e")]
 [assembly: System.Reflection.AssemblyProductAttribute("LockAiAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LockAiAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
