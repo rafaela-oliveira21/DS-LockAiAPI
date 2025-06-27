@@ -11,7 +11,7 @@ namespace LockAiAPI.Data
         {
         }
 
-        public DbSet<PlanoLocacao> PlanoLocacao { get; set; }
+        public DbSet<PlanoLocacao> TB_PLANO_LOCACAO { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
