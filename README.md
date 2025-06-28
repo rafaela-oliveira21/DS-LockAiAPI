@@ -4,7 +4,7 @@ Alunas: Rafaela Oliveira e Gabrielle Vasconcelos
  
 Repositório da API (.NET)
 - API com CRUD de PropostaLocacao
-- Link da API publicada no Somee: http://rafaelaoliveira21.somee.com/DS-LockAiAPI/PlanoLocacao
+- Link da API publicada no Somee: http://rafaelaoliveira21.somee.com/DS-LockAiAPI/PlanoLocacao/8
 
 Endpoints da API (Print na pasta POSTMAN)
 - GET /api/PropostaLocacao
