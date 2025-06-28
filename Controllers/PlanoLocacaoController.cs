@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using LockAiAPI.Models;
 using LockAiAPI.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LockAiAPI.Controllers
 {
